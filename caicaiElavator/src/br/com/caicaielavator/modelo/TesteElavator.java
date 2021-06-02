@@ -17,6 +17,9 @@ public class TesteElavator {
 		System.out.println(elavator.retornarResumo());
 		elavator.descer();
 		elavator.sair();
+		System.out.println(elavator.retornarResumo());
+		elavator.sair(15);
+		System.out.println(elavator.retornarResumo());
 		
 		
 		

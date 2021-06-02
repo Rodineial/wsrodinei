@@ -8,22 +8,51 @@ public class Elavator {
 	private int qtdePessoas;
 	private int andarAtual;
 	
+	public void entrar(int qtde) {
+		int resultado = qtdePessoas + qtde;
+		if (resultado<=capacidadePessoas) {
+			qtdePessoas+=qtde;
+		}
+	}
+	
+	public void sair(int qtde) {
+		int resultado = qtdePessoas - qtde;
+		if (resultado>=0) {
+			qtdePessoas-=qtde;
+		}
+	}
+	
+	public void sair() {
+		if (qtdePessoas>0) {
+			qtdePessoas--;
+		}
+	}
+	
+	public String descer() {
+		if (andarAtual>andarMinimo) {
+			andarAtual--;
+			return "Descendo";
+		}else {
+			return "Já está no andar mínimo";
+		}
+	}
+	
 	public String subir() {
 		if (andarAtual<andarMaximo) {
 			andarAtual++;
 			return "Subindo";
-					
 		}else {
-			return
+			return "Já está no último andar";
 		}
+		
+		
 	}
 	
 	public String retornarResumo() {
 		return 
-				"Nome..: " + nome + "\n" +
-				"Andar.": " + andarAtual + "\n" +
+				"Nome...: " + nome + "\n" +
+				"Andar..: " + andarAtual + "\n" + 
 				"Pessoas: " + qtdePessoas;
-				
 	}
 	
 	public void inicializar(int pAndarMax, int pAndarMin, int pCapPessoas) {
@@ -36,20 +65,9 @@ public class Elavator {
 	}
 	public String retornarNome() {
 		return nome;
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
-		
-	}
-
+	
+	
+	
+}
 
